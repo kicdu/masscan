@@ -20,6 +20,7 @@ enum ApplicationProtocol {
     PROTO_X509_CERT,
     PROTO_HTML_TITLE,
     PROTO_HTML_FULL,
+    PROTO_NTP_MONLIST,
 };
 
 const char *

@@ -18,6 +18,7 @@
 #include "proto-zeroaccess.h"   /* botnet p2p protocol */
 #include "proto-snmp.h"
 #include "proto-dns.h"
+#include "proto-ntp-monlist.h"  /* NTP monlist check */
 
 #include <stdio.h>
 #include <string.h>
@@ -74,6 +75,18 @@ struct Payload2 hard_coded_payloads[] = {
         /* 1b */"\x00\x10" /* TXT */            /*^^^^^^^_____IDS LULZ HAH HA HAH*/
         /* 1d */"\x00\x03" /* CHAOS */
         /* 1f */
+    },
+    {123, 65536, 0x30, 0, 0,
+        /* 00 */"\x17\x00"  /*  */
+        /* 02 */"\x03\x2a"  /* */
+        /* 04 */"\x00\x01"  /* */
+        /* 0c */"\x00\x00\x00\x00\x00\x00\x00\x00"
+        /* 14 */"\x00\x00\x00\x00\x00\x00\x00\x00"
+        /* 1c */"\x00\x00\x00\x00\x00\x00\x00\x00"
+        /* 24 */"\x00\x00\x00\x00\x00\x00\x00\x00"
+        /* 2c */"\x00\x00\x00\x00\x00\x00\x00\x00"
+        /* 34 */"\x00\x00\x00\x00\x00\x00\x00\x00"
+        /* 3c */"\x00\x00\x00\x00"
     },
     {137, 65536, 50, 0, dns_set_cookie,
         "\xab\x12" /* transaction id */
